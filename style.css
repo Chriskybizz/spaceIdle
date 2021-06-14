@@ -35,3 +35,12 @@
     height: 100%;
     width: 75%;
 }
+
+#upgradePick{
+    display: none;
+}
+
+#upgradeButton:hover + #upgradePick{
+    display: block;
+    color: red;
+}

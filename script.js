@@ -1,22 +1,15 @@
 const config = {
     energy: 100,
     ore: 0,
-    ships: 0
+    ships: 0,
+    pickStrength: 1
 }
 
-/* var addShip = (val) => {
-    config.ships += val;
-    document.getElementById("ships").innerHTML = config.ships;
-} */
-
-var newButton = document.createElement("button");
-newButton.innerHTML = "New Ship";
-/* newButton.onclick = addShip(); */
 
 var addOre = () => {
     if (config.energy >= 10) {
         config.energy -= 10;
-        config.ore += 1;
+        config.ore += config.pickStrength;
         document.getElementById("ore").innerHTML = config.ore;
         document.getElementById("energyEmpty").style.width = config.energy + "px";
     }
@@ -29,11 +22,16 @@ var addEnergy = () => {
     }
 }
 
-var juiceTown = () => {
-    if (config.ore > 100) {
-        document.body.appendChild(newButton);
+var upgradePick = () => {
+    if(config.ore >= 200){
+        config.ore -= 200;
+        config.pickStrength += 2;
+        document.getElementById("ore").innerHTML = config.ore;
 
     }
 }
 
-juiceTown();
+var dev = () => {
+    config.ore += 200;
+    document.getElementById("ore").innerHTML = config.ore;
+}
