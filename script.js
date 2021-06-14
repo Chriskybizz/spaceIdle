@@ -1,36 +1,39 @@
 const config = {
+    energy: 100,
     ore: 0,
-    ships: 0,
-    purchaseCost: 10,
-    bonus: 1
+    ships: 0
 }
 
-const mineOre = (val) => {
-    config.ore += val;
-    document.getElementById("ore").innerHTML = config.ore;
-}
+/* var addShip = (val) => {
+    config.ships += val;
+    document.getElementById("ships").innerHTML = config.ships;
+} */
 
-const purchaseShip = () => {
- 
-    if(config.ore >= config.purchaseCost){
-        config.ships += 1;
-        config.ore -= config.purchaseCost;
-        document.getElementById("ships").innerHTML = config.ships;
-        document.getElementById("ore").innerHTML = config.ore; 
-    } 
-    config.purchaseCost = Math.floor(config.bonus * (10 * Math.pow(1.1, config.ships)));
-    document.getElementById("purchaseCost").innerHTML = config.purchaseCost}
+var newButton = document.createElement("button");
+newButton.innerHTML = "New Ship";
+/* newButton.onclick = addShip(); */
 
-const upgradeValue = () =>{
-    if(config.ore >= 5000){
-        config.ore -= 5000;
-        config.bonus *= 2;        
+var addOre = () => {
+    if (config.energy >= 10) {
+        config.energy -= 10;
+        config.ore += 1;
+        document.getElementById("ore").innerHTML = config.ore;
+        document.getElementById("energyEmpty").style.width = config.energy + "px";
     }
-    document.getElementById("ore").innerHTML = config.ore;
-    document.getElementById("bonus").innerHTML = config.bonus;
 }
 
-window.setInterval(function(){
-config.ore += config.ships;
-document.getElementById("ore").innerHTML = config.ore;
-}, 1000);
+var addEnergy = () => {
+    if (config.energy < 100) {
+        config.energy += 10;
+        document.getElementById("energyEmpty").style.width = config.energy + "px";
+    }
+}
+
+var juiceTown = () => {
+    if (config.ore > 100) {
+        document.body.appendChild(newButton);
+
+    }
+}
+
+juiceTown();
