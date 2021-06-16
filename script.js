@@ -1,37 +1,78 @@
-const config = {
-    energy: 100,
-    ore: 0,
-    ships: 0,
-    pickStrength: 1
-}
+var number = 0;
+var energy = 175;
+var ships = 0;
 
-
-var addOre = () => {
-    if (config.energy >= 10) {
-        config.energy -= 10;
-        config.ore += config.pickStrength;
-        document.getElementById("ore").innerHTML = config.ore;
-        document.getElementById("energyEmpty").style.width = config.energy + "px";
+var numberUp = (val) => {
+    if (energy >= 1) {
+        energy -= 1;
+        number += val;
+        document.getElementById("numberValue").innerHTML = number;
+        document.getElementById("finish").style.width = energy + "px";
     }
 }
 
-var addEnergy = () => {
-    if (config.energy < 100) {
-        config.energy += 10;
-        document.getElementById("energyEmpty").style.width = config.energy + "px";
-    }
-}
-
-var upgradePick = () => {
-    if(config.ore >= 200){
-        config.ore -= 200;
-        config.pickStrength += 2;
-        document.getElementById("ore").innerHTML = config.ore;
+var numberUpAuto = (val) => {
+        number += val;
+        document.getElementById("numberValue").innerHTML = number;
 
     }
-}
+
 
 var dev = () => {
-    config.ore += 200;
-    document.getElementById("ore").innerHTML = config.ore;
+    number += 200;
+    document.getElementById("numberValue").innerHTML = number;
 }
+
+var autoShip = () => {
+    if(number >= 1000){
+        ships += 1;
+        number -= 1000;
+        document.getElementById("ships").innerHTML = ships;
+        document.getElementById("numberValue").innerHTML = number;
+            }
+}
+
+var rest = () => {
+    if(energy < 175)
+    energy += 1;
+    document.getElementById("finish").style.width = energy + "px";
+}
+
+window.setInterval(function(){
+    numberUpAuto(Math.floor(ships)), upgradeUnlock()
+ }, 1000
+)
+
+var upgradeUnlock = () => {
+    if (number >= 200) {
+        document.getElementById("upgrade1").style.display = "block";
+    }
+    if (number >= 1000) {
+        document.getElementById("upgrade2").style.display = "block";
+    }
+    if (number >= 2500) {
+        document.getElementById("upgrade3").style.display = "block";
+    }
+    if (number >= 6000) {
+        document.getElementById("upgrade4").style.display = "block";
+    }
+    if (number >= 10000) {
+        document.getElementById("upgrade5").style.display = "block";
+    }
+    if (number >= 20000) {
+        document.getElementById("upgrade6").style.display = "block";
+    }
+    if (number >= 100000) {
+        document.getElementById("upgrade7").style.display = "block";
+    }
+    if (number >= 250000) {
+        document.getElementById("upgrade8").style.display = "block";
+    }
+    if (number >= 700000) {
+        document.getElementById("upgrade9").style.display = "block";
+    }
+    if (number >= 1500000) {
+        document.getElementById("upgrade10").style.display = "block";
+    }
+}
+

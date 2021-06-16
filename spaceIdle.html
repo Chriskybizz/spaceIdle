@@ -4,35 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>space idle</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <title>Document</title>
 </head>
 
 <body>
     <div id="wrap">
-        <div id="controlPanel">
-            <div id="stats">
-                <div>Current rank: <span id="rank"> </span></div>
-                <div>Energy: <div id="energyFull">
-                        <div id="energyEmpty">
-                        </div>
-                    </div>
-                </div>
-                <div>Ore: <span id="ore"></span></div>
-                <div>Ships: <span id="ships"></span></div>
+        <div id="panel1">
+            Number: <span id="numberValue"></span><br />
+            energy:<br />
+            <div id="start">
+                <div id="finish"></div>
             </div>
+            <br/>
+            ships: <span id="ships"></span>
         </div>
-        <div id=" gamePanel">
-                        <button onclick="addOre()">Mine Ore</button>
-                        <button onclick="addEnergy()">Rest</button>
-                        <button onclick="upgradePick()" id="upgradebutton">Upgrade Lazer</button>
-                        <div id="upgradePick"> cost 200 </div>
-                        <button onclick="dev()">Dev: add 200</button>
 
-                </div>
+        <div id="panel2">
+            <button onclick="numberUp(1); upgradeUnlock()"> Number++ </button>
+            <button onclick="rest()">rest</button>
+            <button onclick="autoShip()" id="autoShip">Buy ship</button>
+            <div id="autoShipHide">
+                Automate the number, cost 200
             </div>
+            <button onclick="dev()">Dev</button>
+        </div>
+        <div id="panel3"> <button id="upgrade1">upgrade1</button>
+            <button id="upgrade2">upgrade2</button>
+            <button id="upgrade3">upgrade3</button>
+            <button id="upgrade4">upgrade4</button>
+            <button id="upgrade5">upgrade5</button>
+            <button id="upgrade6">upgrade6</button>
+            <button id="upgrade7">upgrade7</button>
+            <button id="upgrade8">upgrade8</button>
+            <button id="upgrade9">upgrade9</button>
+            <button id="upgrade10">upgrade10</button>
+        </div>
 
+    </div>
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
