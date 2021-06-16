@@ -42,9 +42,13 @@
 
 }
 
-#autoShip:hover + #autoShopHide {
+#autoShip:hover + #autoShipHide {
     display: block;
     color: red;
+    border: black 1px solid;
+    height: fit-content;
+    width: fit-content;
+    font-size: 11px;
 }
 /* Upgrades */
 #upgrade1 {

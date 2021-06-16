@@ -1,11 +1,12 @@
 var number = 0;
 var energy = 175;
 var ships = 0;
+var maxVal = 1;
 
 var numberUp = (val) => {
     if (energy >= 1) {
         energy -= 1;
-        number += val;
+        number += (maxVal * val);
         document.getElementById("numberValue").innerHTML = number;
         document.getElementById("finish").style.width = energy + "px";
     }
@@ -74,5 +75,13 @@ var upgradeUnlock = () => {
     if (number >= 1500000) {
         document.getElementById("upgrade10").style.display = "block";
     }
+}
+
+var minePower = () => {
+    maxVal += 1;
+    number -= 200;
+    document.getElementById("numberValue").innerHTML = number;
+    document.getElementById("upgrade1").style.display = "none"
+
 }
 
