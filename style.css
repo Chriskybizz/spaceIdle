@@ -55,6 +55,22 @@
     display: none;
 }
 
+#minePowerHide{
+    display: none;
+}
+
+
+#upgrade1:hover + #minePowerHide{
+    display: block;
+    color: red;
+    border: black 1px solid;
+    height: fit-content;
+    width: 50px;
+    font-size: 11px;
+
+}
+
+
 #upgrade2 {
     display: none;
 }

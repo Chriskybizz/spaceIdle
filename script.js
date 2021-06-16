@@ -1,12 +1,14 @@
 var number = 0;
 var energy = 175;
 var ships = 0;
-var maxVal = 1;
+var clickPower = 1;
+var minePowerCost = Math.floor(25 * Math.pow(2.5, clickPower));
+
 
 var numberUp = (val) => {
     if (energy >= 1) {
         energy -= 1;
-        number += (maxVal * val);
+        number += (clickPower* val);
         document.getElementById("numberValue").innerHTML = number;
         document.getElementById("finish").style.width = energy + "px";
     }
@@ -45,7 +47,7 @@ window.setInterval(function(){
 )
 
 var upgradeUnlock = () => {
-    if (number >= 200) {
+    if (number >= (minePowerCost)) {
         document.getElementById("upgrade1").style.display = "block";
     }
     if (number >= 1000) {
@@ -76,12 +78,18 @@ var upgradeUnlock = () => {
         document.getElementById("upgrade10").style.display = "block";
     }
 }
+document.getElementById("minePowerCost").innerHTML = minePowerCost;
+
 
 var minePower = () => {
-    maxVal += 1;
-    number -= 200;
+    number -= (minePowerCost);
+    clickPower += 1;
     document.getElementById("numberValue").innerHTML = number;
-    document.getElementById("upgrade1").style.display = "none"
+    document.getElementById("upgrade1").style.display = "none";
+    minePowerCost = Math.floor(25 * Math.pow(2.5, clickPower));
+    document.getElementById("minePowerCost").innerHTML = minePowerCost;
+
 
 }
+
 
