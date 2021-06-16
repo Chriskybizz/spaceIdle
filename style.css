@@ -75,8 +75,35 @@
     display: none;
 }
 
+#effectiveRestHide {
+    display: none;
+}
+
+#upgrade2:hover + #effectiveRestHide{
+    display: block;
+    color: red;
+    border: black 1px solid;
+    height: fit-content;
+    width: 50px;
+    font-size: 11px;
+}
+
 #upgrade3 {
     display: none;
+}
+
+#sleepNaniteHide{
+    display: none;
+}
+
+#upgrade3:hover + #sleepNaniteHide{
+    display: block;
+    color: red;
+    border: black 1px solid;
+    height: fit-content;
+    width: 50px;
+    font-size: 11px;
+
 }
 
 #upgrade4 {
